@@ -13,6 +13,7 @@
     <script src="game-scripts/main.js"></script>
     <script src="game-scripts/build-board.js"></script>
     <script src="game-scripts/add-to-que.js"></script>
+    <script src="game-scripts/get-query-variable.js"></script>
 
 </head>
 <body>
@@ -21,9 +22,9 @@
         <h1>Snake</h1>
         <label>Difficulty:</label>
         <select id="difficulty-input">
-            <option value="1">Easy</option>
-            <option value="2" selected>Medium</option>
-            <option value="3">Hard</option>
+            <option id='d1' value="1">Easy</option>
+            <option id='d2' value="2" selected>Medium</option>
+            <option id='d3' value="3">Hard</option>
         </select>
         <br />
         <button id="start-button" autofocus>Start</button>
@@ -38,8 +39,11 @@
     </script>
     <script name="start-page-script">
         $('#game-page').hide();
+
+        var persDiff = getQueryVariable('d');
+        $("#difficulty-input option[value="+persDiff+"]").prop("selected", "selected")
         $('#start-button').on('click', function () {
-            var diff = $('#difficulty-input').val();
+        var diff = $('#difficulty-input').val();
             main(diff);
         });
     </script>

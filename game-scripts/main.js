@@ -5,9 +5,11 @@ var snake = instantiateSnake();
 var toWhite = [];
 var gameIsOver = false;
 var lastDirection = '';
+var difficulty = '';
 
 
 function main(gameDiff) {
+    difficulty = gameDiff;
     $('#start-page').hide();
     $('#game-page').show();
     var cycleDelay = gameDiff == 1 ? 300 : gameDiff == 2 ? 100 : 50;
@@ -138,7 +140,7 @@ function moveSnake(direction) {
 function gameOver() {
     gameIsOver = true;
     $('#game-page').hide();
-    var html = "<a href='PlaySnake.html'><button id='play-again'>Play Again?</button></a>";
+    var html = "<a href='PlaySnake.html?d="+difficulty+"'><button id='play-again'>Play Again?</button></a>";
     $('#game-over-page').append(html);
     $('#play-again').focus();
 }
