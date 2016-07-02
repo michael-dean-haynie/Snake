@@ -1,7 +1,7 @@
-function buildBoard(gameDiff) {
+function buildBoard() {
 
     // create elements
-    var rowCount = gameDiff == 1 ? 20 : gameDiff == 2 ? 20 : 20;
+    var rowCount = 20;
     var colCount = rowCount;
 
     var rowHTML = "<div class='game-board-row'></div>";
