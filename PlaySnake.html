@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>PlaySnake</title>
+
+    <!--jQuery-->
+    <script src="libs/jquery-3.0.0.min.js"></script>
+    <!--Game Scripts-->
+    <script src="game-scripts/main.js"></script>
+    <script src="game-scripts/build-board.js"></script>
+
+</head>
+<body>
+    <div id="start-page">
+        <h1>Snake</h1>
+        <label>Difficulty:</label>
+        <select id="difficulty-input">
+            <option value="1">Easy</option>
+            <option value="2">Medium</option>
+            <option value="3">Hard</option>
+        </select>
+        <br />
+        <button id="start-button">Start</button>
+    </div>
+    <div id="game-page">
+        This is the game page!
+    </div>
+    <script name="test-script">
+    </script>
+    <script name="start-page-script">
+        $('#game-page').hide();
+        $('#start-button').on('click', function () {
+            var diff = $('#difficulty-input').val();
+            main(diff);
+        });
+    </script>
+</body>
+</html>
