@@ -1,5 +1,4 @@
 ﻿$('html').on('keydown', function (event) {
-    console.log(event.keyCode);
     switch(event.keyCode) {
         case 37:
             var result = 'l';
@@ -16,6 +15,9 @@
         default:
             var result = que[que.length - 1];
     }
-    if (que[que.length -1] != result) que.push(result);
-    console.log(que);
+    if (que[que.length - 1] != result || que.length == 0) {
+        //if (que.length == 1) que.pop();
+        que.push(result);
+        console.log(que);
+    } 
 });
