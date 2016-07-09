@@ -179,7 +179,7 @@
         function gameOver() {
             gameIsOver = true;
             $('#game-page').hide();
-            var html = "<a href='PlaySnake.html?d="+difficulty+"'><button id='play-again'>Play Again?</button></a>";
+            var html = "<a href='PlaySnakeSingle.html?d="+difficulty+"'><button id='play-again'>Play Again?</button></a>";
             $('#game-over-page').append(html);
             $('#play-again').focus();
         }
